@@ -13,4 +13,12 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+// Internal imports, e.g:
+import { initMasonry } from '../plugins/masonry';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  initMasonry()
+});
+
 import "stylesheets/application.scss"

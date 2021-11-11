@@ -8,15 +8,47 @@
     <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn-modal destroy" %>
   <% } %>
 <% end %>
-<%= render 'components/layouts/container', classes: 'flex items-center flex-col px-2' do %>
+<%= render 'components/layouts/container', classes: 'flex items-center flex-col px-2 pb-4' do %>
   <div class="flex items-center flex-col mb-4">
     <%= render 'components/avatar', classes: "avatar-xl mb-4" %>
     <h1 class="text-xl font-bold"><%= @user.name.full %></h1>
     <p class="text-gray-400 text-sm mb-4"><%= @user.formatted_username %></p>
     <button class="btn btn-sm btn-black">Follow</button>
   </div>
-  <div class="flex items-center w-full">
+<% end %>
+<div class="max-w-7xl px-1 md:px-4 pb-24 mx-auto">
+  <div class="flex items-center justify-center w-full">
     <%= link_to 'Pins', '#', class:"tab active" %>
     <%= link_to 'Boards', '#', class:"tab" %>
   </div>
-<% end %>
+  <div class="masonry-container">
+    <div class="masonry-sizer"></div>
+    <div class="masonry-item">
+      <%= image_tag 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=983&q=80', class:'rounded' %>
+    </div>
+    <div class="masonry-item">
+      <%= image_tag 'https://images.unsplash.com/photo-1511135570219-bbad9a02f103?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80', class:'rounded' %>
+    </div>
+    <div class="masonry-item">
+      <%= image_tag 'https://images.unsplash.com/photo-1476802379768-84b0af3e39ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80', class:'rounded' %>
+    </div>
+    <div class="masonry-item">
+      <%= image_tag 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=983&q=80', class:'rounded' %>
+    </div>
+    <div class="masonry-item">
+      <%= image_tag 'https://images.unsplash.com/photo-1511135570219-bbad9a02f103?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80', class:'rounded' %>
+    </div>
+    <div class="masonry-item">
+      <%= image_tag 'https://images.unsplash.com/photo-1476802379768-84b0af3e39ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80', class:'rounded' %>
+    </div>
+    <div class="masonry-item">
+      <%= image_tag 'https://images.unsplash.com/photo-1511135570219-bbad9a02f103?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80', class:'rounded' %>
+    </div>
+    <div class="masonry-item">
+      <%= image_tag 'https://images.unsplash.com/photo-1476802379768-84b0af3e39ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80', class:'rounded' %>
+    </div>
+    <div class="masonry-item">
+      <%= image_tag 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=983&q=80', class:'rounded' %>
+    </div>
+  </div>
+</div>
