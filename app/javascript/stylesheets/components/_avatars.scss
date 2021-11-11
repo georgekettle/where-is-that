@@ -1,0 +1,23 @@
+.avatar {
+	@apply flex relative w-8 h-8 justify-center items-center rounded-full overflow-hidden shadow-sm border border-white;
+}
+
+.avatar-xs {
+	@apply w-8 h-8;
+}
+
+.avatar-sm {
+	@apply w-10 h-10;
+}
+
+.avatar-md {
+	@apply w-12 h-12;
+}
+
+.avatar-lg {
+	@apply w-16 h-16;
+}
+
+.avatar-xl {
+	@apply w-24 h-24 shadow-md border-2;
+}
