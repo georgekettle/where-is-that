@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+george = User.create(name: "George Kettle", email: "george.kettle@icloud.com", password: 'secret')
+
+boards = %w{Sydney Perth Esperance}
+boards.each do |board|
+	Board.create!(name: board, owner: george)
+end
