@@ -1,12 +1,11 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  get 'pins/home'
   authenticate :user, lambda { |u| u.admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
 
-
+  resources :profiles, only: :show
   devise_for :users
   authenticated do
     root to: 'pins#home', as: :authenticated_root
