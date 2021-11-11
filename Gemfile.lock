@@ -193,6 +193,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    tailwindcss-rails (0.5.1)
+      rails (>= 6.0.0)
     thor (1.1.0)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -239,10 +241,12 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
+  redis (~> 4.0)
   sass-rails (>= 6)
   selenium-webdriver
   sidekiq (~> 6.1, >= 6.1.2)
   spring
+  tailwindcss-rails (~> 0.5.1)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
