@@ -1,5 +1,9 @@
 <%= render 'components/headers/header' do %>
-  
+  <%= render 'components/modals/menu_modal', trigger: capture { %>
+    My body content
+  <% }, options: capture { %>
+    My footer content
+  <% } %>
 <% end %>
 <div>
   <h1 class="text-xl font-bold">Profiles#show</h1>

@@ -193,6 +193,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stimulus-rails (0.5.4)
+      rails (>= 6.0.0)
     tailwindcss-rails (0.5.1)
       rails (>= 6.0.0)
     thor (1.1.0)
@@ -246,6 +248,7 @@ DEPENDENCIES
   selenium-webdriver
   sidekiq (~> 6.1, >= 6.1.2)
   spring
+  stimulus-rails
   tailwindcss-rails (~> 0.5.1)
   turbolinks (~> 5)
   tzinfo-data
