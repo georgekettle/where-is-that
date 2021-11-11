@@ -9,5 +9,7 @@
     <main class="px-4 lg:px-10">
       <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
+
+    <%= render "shared/navbar" %>
   </body>
 </html>
