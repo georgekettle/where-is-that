@@ -1,8 +1,12 @@
 <%= render 'components/headers/header' do %>
-  <%= render 'components/modals/menu_modal', trigger: capture { %>
-    My body content
+  <%= render 'components/modals/menu_modal', title: "Hello", trigger: capture { %>
+    <a href="#" data-action="click->modal#open" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded">
+     <span>Open Modal</span>
+   </a>
   <% }, options: capture { %>
-    My footer content
+    <%= link_to "Hello", "#", class:"w-full p-4 bg-white hover:bg-gray-200 border-b border-gray-200 text-center" %>
+    <%= link_to "Edit account", edit_user_registration_path, class: "btn-modal" %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn-modal destroy" %>
   <% } %>
 <% end %>
 <div>

@@ -2,3 +2,6 @@
 // Run that command whenever you add a new controller
 
 import { application } from "./application"
+
+import ModalController from "./modal_controller"
+application.register("modal", ModalController)

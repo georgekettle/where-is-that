@@ -269,3 +269,11 @@
     }
   }
 }
+
+.btn-modal {
+  @apply w-full p-4 bg-white hover:bg-gray-200 border-b border-gray-200 text-center;
+}
+
+.btn-modal.destroy {
+  @apply hover:bg-red-100 text-red-500;
+}
