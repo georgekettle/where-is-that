@@ -1,9 +1,9 @@
 // Remove what you don't need below to save on file size if you're not using Purge CSS
 
 .btn {
-  @apply font-normal text-base rounded cursor-pointer border border-transparent appearance-none inline-block select-none leading-normal antialiased align-baseline;
+  @apply font-medium text-base rounded cursor-pointer border border-transparent appearance-none inline-block select-none leading-normal antialiased align-baseline;
 
-  padding: 0.35rem 0.75rem;
+  padding: 0.3rem 0.75rem;
   transition: 0.15s ease;
 
   &.btn-sm {
@@ -28,6 +28,14 @@
 
   &.btn-square {
     @apply rounded-none;
+  }
+
+  &.btn-wide {
+    @apply px-10;
+  }
+
+  &.btn-sm-text {
+    @apply text-sm
   }
 }
 
@@ -77,19 +85,19 @@
 }
 
 .btn-red {
-  @apply bg-red-600 text-white;
+  @apply bg-red-500 text-white;
 
   &:hover,
   &:focus {
-    @apply bg-red-700;
+    @apply bg-red-600;
   }
 
   &.btn-outline {
-    @apply bg-transparent text-red-600 border border-red-600;
+    @apply bg-transparent text-red-500 border border-red-500;
 
     &:hover,
     &:focus {
-      @apply bg-red-600 text-white;
+      @apply bg-red-500 text-white;
     }
   }
 }
@@ -110,11 +118,11 @@
 
 // MODAL OPTIONS BUTTONS
 .btn-modal {
-  @apply w-full p-4 bg-white hover:bg-gray-200 border-b border-gray-200 text-center;
+  @apply w-full p-4 bg-white hover:bg-gray-100 border-b border-gray-200 text-center;
 }
 
 .btn-modal.destroy {
-  @apply hover:bg-red-100 text-red-500;
+  @apply hover:bg-red-100 text-red-500 hover:text-red-600;
 }
 
 // ====== ICON BUTTONS ======

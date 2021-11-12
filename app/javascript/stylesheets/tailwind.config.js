@@ -1,11 +1,21 @@
 const colors = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme')
+
+// const fontFamily = defaultTheme.fontFamily;
+// fontFamily['sans'] = [
+//   'Roboto', // <-- Roboto is a default sans font now
+//   'system-ui',
+//   // <-- you may provide more font fallbacks here
+// ];
 
 module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
-    fontFamily: {
-      sans: ['Shape', 'Helvetica', 'sans-serif']
-    },
+    // fontFamily: fontFamily,
+    // fontFamily: {
+    //   sans: "'Circular', sans-serif",
+    //   sans: "'Fraunces', serif",
+    // },
     screens: {
       'xs': '480px',
       // => @media (min-width: 480px) { ... }
@@ -24,7 +34,9 @@ module.exports = {
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     },
-    extend: {},
+    extend: {
+      fontFamily: { sans: ['Roboto', ...defaultTheme.fontFamily.sans] },
+    },
   },
   variants: {
     extend: {
