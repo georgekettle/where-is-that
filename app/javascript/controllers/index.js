@@ -5,3 +5,6 @@ import { application } from "./application"
 
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)
+
+import TabsController from "./tabs_controller"
+application.register("tabs", TabsController)
