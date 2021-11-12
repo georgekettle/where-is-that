@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
+
+  get 'search', to: 'search#search', as: :search
   resources :boards, only: :show
   resources :profiles, only: :show
   devise_for :users
