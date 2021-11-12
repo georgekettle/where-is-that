@@ -1,0 +1,8 @@
+<%= render 'components/layouts/container', classes: 'flex items-center justify-center px-2 py-8' do %>
+	<%= render 'icons/stars', classes:"h-6 w-6 stroke-current text-gray-800 mr-2" %>
+  <h1 class="text-center inline">Explore</h1>
+<% end %>
+
+<div class="px-1">
+  <%= render 'pins/pins', pins: Pin.all %>
+</div>

@@ -1,0 +1,22 @@
+<% number_of_pins = board.pins.count %>
+
+<div class="w-1/2 md:w-1/3 lg:w-1/4 p-1 pb-4">
+	<%= link_to board_path(board) do %>
+		<div class="aspect-w-9 aspect-h-6">
+			<div class="grid grid-cols-3 grid-rows-2 gap-0.5 rounded-md overflow-hidden">
+			  <!-- ... -->
+				<div class="row-span-2 col-span-2 bg-gray-100">
+					<%= cl_image_tag(board.pins.first.photos.first.key, class: 'object-cover h-full w-full') if number_of_pins >= 1 %>
+				</div>
+				<div class="h-full w-full row-span-1 bg-gray-100">
+					<%= cl_image_tag(board.pins.second.photos.first.key, class: 'object-cover h-full w-full') if number_of_pins >= 2 %>
+				</div>
+				<div class="h-full w-full row-span-1 bg-gray-100">
+					<%= cl_image_tag(board.pins.third.photos.first.key, class: 'object-cover h-full w-full') if number_of_pins >= 3 %>
+				</div>
+			</div>
+		</div>
+		<h4 class="font-semibold"><%= board.name %></h4>
+		<p class="text-xs text-gray-400"><%= board.pins.count %> pins</p>
+	<% end %>
+</div>

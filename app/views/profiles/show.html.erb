@@ -1,0 +1,44 @@
+<%= render 'components/headers/header' do %>
+  <%= render 'components/modals/menu_modal', title: "Hello", trigger: capture { %>
+    <a href="#" data-action="click->modal#open" class="icon-btn">
+     <%= render 'icons/options', classes: "h-5 w-5" %>
+   </a>
+  <% }, options: capture { %>
+    <%= link_to "Edit account", edit_user_registration_path, class: "btn-modal" %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn-modal destroy" %>
+  <% } %>
+<% end %>
+<%= render 'components/layouts/container', classes: 'flex items-center flex-col px-2 pb-8' do %>
+  <div class="flex items-center flex-col mb-4">
+    <%= render 'components/avatar', classes: "avatar-xl mb-2", image_path: cl_image_path(@user.photo.key) %>
+    <h1 class="text-center"><%= @user.name.full %></h1>
+    <p class="text-gray-400 text-sm mb-4"><%= @user.formatted_username %></p>
+    <button class="btn btn-md btn-black btn-wide btn-sm-text">Follow</button>
+  </div>
+<% end %>
+<div class="max-w-7xl px-1 md:px-4 pb-24 mx-auto">
+  <div data-controller="tabs" data-tabs-active-tab="bg-black bg-opacity-5 text-gray-900">
+    <ul class="list-reset flex p-1">
+      <li class="text-gray-500 hover:text-gray-900 rounded-md" data-tabs-target="tab" data-action="click->tabs#change">
+        <a class="inline-flex py-2 px-4 font-medium no-underline items-center" href="#">
+          <%= render "icons/pin", classes: "h-4 w-4 stroke-current mr-2" %>
+          Pins
+        </a>
+      </li>
+      <li class="text-gray-500 hover:text-gray-900 rounded-md" data-tabs-target="tab" data-action="click->tabs#change">
+        <a class="inline-flex py-2 px-4 font-medium no-underline items-center" href="#">
+          <%= render "icons/board", classes: "h-4 w-4 stroke-current mr-2" %>
+          Boards
+        </a>
+      </li>
+    </ul>
+
+    <div class="hidden" data-tabs-target="panel">
+      <%= render 'pins/pins', pins: @user.pins %>
+    </div>
+
+    <div class="hidden" data-tabs-target="panel">
+      <%= render 'boards/boards', boards: @user.boards %>
+    </div>
+  </div>
+</div>

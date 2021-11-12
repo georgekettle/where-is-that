@@ -1,0 +1,20 @@
+<%= render 'components/headers/header' do %>
+  <%= render 'components/modals/menu_modal', title: "Board options", trigger: capture { %>
+    <a href="#" data-action="click->modal#open" class="icon-btn">
+     <%= render 'icons/options', classes: "h-5 w-5" %>
+   </a>
+  <% }, options: capture { %>
+    <%= link_to "Edit board", '#', class: "btn-modal" %>
+    <%= link_to "Share", '#', class: "btn-modal" %>
+    <%= link_to "Delete", '#', method: :delete, class:"btn-modal destroy" %>
+  <% } %>
+<% end %>
+<%= render 'components/layouts/container', classes: 'flex items-center flex-col px-2 pb-8' do %>
+  <h1 class="text-center mb-2"><%= @board.name %></h1>
+  <%= render 'components/avatar', classes: "avatar-xs mr-2", image_path: cl_image_path(@board.owner.photo.key) %>
+  <%= link_to @board.owner.name.full, profile_path(@board.owner), class: 'text-center font-semibold text-sm' %>
+<% end %>
+
+<div class="px-1">
+  <%= render 'pins/pins', pins: @board.pins %>
+</div>

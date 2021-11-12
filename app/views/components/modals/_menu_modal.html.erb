@@ -1,0 +1,23 @@
+<% title ||= nil %>
+
+<div data-controller="modal">
+  <!-- yield must contain data-action="click->modal#open" -->
+  <%= trigger %>
+
+  <!-- Modal Container -->
+  <div data-modal-target="container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard" class="hidden animated fadeIn fixed inset-0 overflow-y-auto flex items-end md:items-center justify-center bg-gray-900 bg-opacity-5" style="z-index: 9999;">
+    <!-- Modal Inner Container -->
+    <div class="max-h-screen w-full max-w-lg relative p-2 lg:p-0">
+      <!-- Modal Card -->
+      <div class="m-1 rounded shadow">
+        <div class="rounded overflow-hidden flex flex-col items-center justify-center mb-2">
+        	<% if title %>
+          	<h4 class="w-full p-2 bg-white border-b border-gray-200 text-center text-xs text-gray-400"><%= title %></h4>
+        	<% end %>
+          <%= options %>
+        </div>
+        <button class="w-full p-4 py-2 bg-white text-center rounded text-gray-400 hover:text-gray-900 font-medium" data-action="click->modal#close">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
