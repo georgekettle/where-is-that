@@ -17,18 +17,13 @@
   </div>
 <% end %>
 <div class="max-w-7xl px-1 md:px-4 pb-24 mx-auto">
-  <div class="flex items-center justify-center w-full">
-    <%= link_to 'Pins', '#', class:"tab active" %>
-    <%= link_to 'Boards', '#', class:"tab" %>
-  </div>
-  
   <div data-controller="tabs" data-tabs-active-tab="-mb-px border-l border-t border-r rounded-t">
     <ul class="list-reset flex border-b">
       <li class="-mb-px mr-1" data-tabs-target="tab" data-action="click->tabs#change">
-        <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-700 font-semibold no-underline" href="#">Pins</a>
+        <a class="bg-white inline-block py-2 px-4 text-gray-500 hover:text-gray-700 font-semibold no-underline" href="#">Pins</a>
       </li>
       <li class="mr-1" data-tabs-target="tab" data-action="click->tabs#change">
-        <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-700 font-semibold no-underline" href="#">Boards</a>
+        <a class="bg-white inline-block py-2 px-4 text-gray-500 hover:text-gray-700 font-semibold no-underline" href="#">Boards</a>
       </li>
     </ul>
 
@@ -37,7 +32,7 @@
     </div>
 
     <div class="hidden py-4 px-4 border-l border-b border-r" data-tabs-target="panel">
-      Boards
+      <%= render 'boards/boards', boards: @user.boards %>
     </div>
 
     <div class="hidden py-4 px-4 border-l border-b border-r" data-tabs-target="panel">
