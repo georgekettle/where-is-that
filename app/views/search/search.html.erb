@@ -1,6 +1,8 @@
-<div class="w-screen h-screen pb-14">
-  <div data-controller="map"
-        data-map-target="container"
-        class="w-full h-full bg-gray-100"
-        data-map-mapbox-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div data-controller="map"
+      data-map-mapbox-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      class="w-screen h-screen pb-14 relative">
+  <div data-map-target="container"
+        class="w-full h-full bg-gray-100"></div>
+  <div data-map-target="search"
+        class="absolute left-1/2 top-0 transform -translate-x-1/2 w-full max-w-xl p-2 md:p-4 flex justify-center"></div>
 </div>

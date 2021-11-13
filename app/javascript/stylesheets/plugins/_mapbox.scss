@@ -1,0 +1,8 @@
+.mapboxgl-ctrl-attrib,
+.mapboxgl-ctrl-logo {
+    display: none !important;
+}
+
+.mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
+    @apply font-sans;
+}
