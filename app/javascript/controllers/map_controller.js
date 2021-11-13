@@ -101,6 +101,50 @@ export default class extends Controller {
         'circle-stroke-color': '#fff'
       }
     });
+
+    // inspect a cluster on click
+    this.map.on('click', 'clusters', this.clusterClick.bind(this))
+    this.map.on('click', 'unclustered-point', this.unclusterClick.bind(this))
+  }
+
+  clusterClick(e) {
+    const features = this.map.queryRenderedFeatures(e.point, {
+                        layers: ['clusters']
+                      });
+
+    const clusterId = features[0].properties.cluster_id;
+    this.map.getSource('locations').getClusterExpansionZoom(clusterId, (err, zoom) => {
+      if (err) return;
+
+      this.map.easeTo({
+        center: features[0].geometry.coordinates,
+        zoom: zoom
+      });
+    });
+  }
+
+  unclusterClick(e) {
+    console.log('unclusterClick')
+    var coordinates = e.features[0].geometry.coordinates.slice();
+    var pins = e.features[0]["properties"];
+    console.log(pins)
+
+    // // Ensure that if the map is zoomed out such that
+    // // multiple copies of the feature are visible, the
+    // // popup appears over the copy being pointed to.
+    // while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+    //   coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+    // };
+
+    // var locationId = e.features[0]["properties"]["id"];
+    // var popup = document.getElementById(`map-popup-location-${locationId}`);
+    // let popupClone = popup.cloneNode(true);
+
+    // new mapboxgl.Popup()
+    //   .setLngLat(coordinates)
+    //   .setDOMContent(popupClone)
+    //   // .setHTML(`<div style="height: 200px;width: 200px" class="mapbox-popup-photo"><img src=${pins[0]["photo"]["image"]["service_url"]} alt=${posts[0]["title"]} width="200" height="200" style="object-fit: cover;min-width: 100%;min-height: 100%;"/></div>`)
+    //   .addTo(map);
   }
 
   initSearch() {

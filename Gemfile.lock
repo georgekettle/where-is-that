@@ -263,9 +263,8 @@ GEM
       rails (>= 6.0.0)
     thor (1.1.0)
     tilt (2.0.10)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
+    turbo-rails (0.7.14)
+      rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
@@ -324,7 +323,7 @@ DEPENDENCIES
   spring
   stimulus-rails
   tailwindcss-rails (~> 0.5.1)
-  turbolinks (~> 5)
+  turbo-rails
   tzinfo-data
   unsplash
   web-console (>= 4.1.0)

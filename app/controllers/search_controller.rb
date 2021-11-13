@@ -11,13 +11,18 @@ class SearchController < ApplicationController
 
   def json_locations
     @locations.map do |loc|
+      loc_hash = loc.attributes
+      loc_hash[:popup_html] = "<turbo-frame id='messages' src='/messages' loading='lazy'>
+                                Loading...
+                              </turbo-frame>"
+
       feature = {
         type: "Feature",
         geometry: {
           type: "Point",
           coordinates: [loc.longitude, loc.latitude]
         },
-        properties: loc.attributes
+        properties: loc_hash
       }
     end
   end
