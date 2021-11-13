@@ -64,3 +64,4 @@ gem 'name_of_person', '~> 1.1', '>= 1.1.1'
 gem "tailwindcss-rails", "~> 0.5.1"
 gem 'stimulus-rails'
 gem 'cloudinary', '~> 1.16.0'
+gem 'geocoder'

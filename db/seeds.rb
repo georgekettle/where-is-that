@@ -41,12 +41,12 @@ boards = [
 	{ name: 'Sydney', coordinates: [ -33.847927, 150.651791 ] },
 	{ name: 'Melbourne', coordinates: [ -37.9712371,144.4927112 ] },
 	{ name: 'Perth', coordinates: [ -32.0397559,115.6813512 ] },
-	{ name: 'Esperance', coordinates: [ -33.851725,121.8633359 ] },
-	{ name: 'Yallingup', coordinates: [ -33.679676,114.9965558 ] },
-	{ name: 'Meelup', coordinates: [ -33.573477,115.0854349 ] },
-	{ name: 'Dunsborough', coordinates: [ -33.6102707,115.0753988 ] },
+	{ name: 'Esperance, WA', coordinates: [ -33.851725,121.8633359 ] },
+	{ name: 'Yallingup, WA', coordinates: [ -33.679676,114.9965558 ] },
+	{ name: 'Meelup, WA', coordinates: [ -33.573477,115.0854349 ] },
+	{ name: 'Dunsborough, WA', coordinates: [ -33.6102707,115.0753988 ] },
 	{ name: 'Albany, WA', coordinates: [ -34.9920969,117.851939 ] },
-	{ name: 'Margaret River', coordinates: [ -33.9666535,115.017882 ] }
+	{ name: 'Margaret River, WA', coordinates: [ -33.9666535,115.017882 ] }
 ]
 
 puts "Creating boards"
@@ -54,9 +54,7 @@ boards.each_with_index do |board_hash, index|
 	puts "- Creating location: #{board_hash[:name]}"
 	user = (index > 3) ? george : User.where(id: 2..4).sample
 	coordinates = board_hash[:coordinates]
-	location = Location.create!(
-								latitude: coordinates[0],
-								longitude: coordinates[1])
+	location = Location.create!(address: board_hash[:name])
 	puts "- Creating board for #{board_hash[:name]}"
 	board = Board.create!(name: board_hash[:name], owner: user)
 	puts "- Grabbing photos from unsplash"
