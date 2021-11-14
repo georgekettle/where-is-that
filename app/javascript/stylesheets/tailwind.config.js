@@ -1,21 +1,8 @@
 const colors = require('tailwindcss/colors');
-const defaultTheme = require('tailwindcss/defaultTheme')
-
-// const fontFamily = defaultTheme.fontFamily;
-// fontFamily['sans'] = [
-//   'Roboto', // <-- Roboto is a default sans font now
-//   'system-ui',
-//   // <-- you may provide more font fallbacks here
-// ];
 
 module.exports = {
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
-    // fontFamily: fontFamily,
-    // fontFamily: {
-    //   sans: "'Circular', sans-serif",
-    //   sans: "'Fraunces', serif",
-    // },
     screens: {
       'xs': '480px',
       // => @media (min-width: 480px) { ... }
@@ -34,8 +21,30 @@ module.exports = {
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     },
-    extend: {
-      fontFamily: { sans: ['Roboto', ...defaultTheme.fontFamily.sans] },
+
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: colors.black,
+      white: colors.white,
+      gray: colors.trueGray,
+      red: colors.rose,
+      yellow: colors.amber,
+      green: colors.emerald,
+      // generate these below at www.tailwindshades.com
+      primary: {
+        DEFAULT: '#FF8438',
+        '50': '#FFEBD9',
+        '100': '#FFE1C7',
+        '200': '#FFCCA3',
+        '300': '#FFB57F',
+        '400': '#FF9D5C',
+        '500': '#FF8438',
+        '600': '#FF6914',
+        '700': '#F05200',
+        '800': '#CC4200',
+        '900': '#A83300'
+      },
     },
   },
   variants: {

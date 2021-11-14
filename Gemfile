@@ -13,8 +13,8 @@ gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# Turbo makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbo-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -64,3 +64,4 @@ gem 'name_of_person', '~> 1.1', '>= 1.1.1'
 gem "tailwindcss-rails", "~> 0.5.1"
 gem 'stimulus-rails'
 gem 'cloudinary', '~> 1.16.0'
+gem 'geocoder'

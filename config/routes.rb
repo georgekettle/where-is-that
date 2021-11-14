@@ -5,8 +5,15 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
+  get 'search', to: 'search#search', as: :search
+  post 'location_search', to: 'search#location_search', as: :location_search
   resources :boards, only: :show
   resources :profiles, only: :show
+  resources :locations, only: :show do
+    member do
+      get :popup
+    end
+  end
   devise_for :users
   authenticated do
     root to: 'pins#home', as: :authenticated_root

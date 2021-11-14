@@ -128,6 +128,7 @@ GEM
     ffi (1.15.4)
     friendly_id (5.4.2)
       activerecord (>= 4.0.0)
+    geocoder (1.7.0)
     globalid (0.5.2)
       activesupport (>= 5.0)
     http-accept (1.7.0)
@@ -262,9 +263,8 @@ GEM
       rails (>= 6.0.0)
     thor (1.1.0)
     tilt (2.0.10)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
+    turbo-rails (0.7.14)
+      rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
@@ -308,6 +308,7 @@ DEPENDENCIES
   dotenv-rails
   faker!
   friendly_id (~> 5.4, >= 5.4.1)
+  geocoder
   jbuilder (~> 2.7)
   listen (~> 3.3)
   name_of_person (~> 1.1, >= 1.1.1)
@@ -322,7 +323,7 @@ DEPENDENCIES
   spring
   stimulus-rails
   tailwindcss-rails (~> 0.5.1)
-  turbolinks (~> 5)
+  turbo-rails
   tzinfo-data
   unsplash
   web-console (>= 4.1.0)
