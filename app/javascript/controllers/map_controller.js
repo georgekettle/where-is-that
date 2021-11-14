@@ -36,6 +36,11 @@ export default class extends Controller {
     })
   }
 
+  disconnect() {
+    this.containerTarget.innerHTML = ''
+    this.searchTarget.innerHTML = ''
+  }
+
   initMap() {
     this.map = new mapboxgl.Map({
       container: this.containerTarget,
@@ -124,10 +129,8 @@ export default class extends Controller {
   }
 
   unclusterClick(e) {
-    console.log('unclusterClick')
     var coordinates = e.features[0].geometry.coordinates.slice();
     var pins = e.features[0]["properties"];
-    console.log(pins)
 
     new mapboxgl.Popup()
       .setLngLat(e.lngLat)

@@ -15,7 +15,7 @@ module Geocodable
 		    obj.country_code = geo.country_code
 		    if geo.data && geo.data["context"] && geo.data["context"][1] && geo.data["context"][1]["text"]
 		  		locality = geo.data["context"][1]["text"]
-		    	obj.city = locality
+		    	obj.city = geo.city || locality
 		  	else
 		  		obj.city = geo.city
 		  	end
