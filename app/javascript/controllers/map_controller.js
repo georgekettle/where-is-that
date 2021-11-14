@@ -129,22 +129,10 @@ export default class extends Controller {
     var pins = e.features[0]["properties"];
     console.log(pins)
 
-    // // Ensure that if the map is zoomed out such that
-    // // multiple copies of the feature are visible, the
-    // // popup appears over the copy being pointed to.
-    // while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-    //   coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-    // };
-
-    // var locationId = e.features[0]["properties"]["id"];
-    // var popup = document.getElementById(`map-popup-location-${locationId}`);
-    // let popupClone = popup.cloneNode(true);
-
-    // new mapboxgl.Popup()
-    //   .setLngLat(coordinates)
-    //   .setDOMContent(popupClone)
-    //   // .setHTML(`<div style="height: 200px;width: 200px" class="mapbox-popup-photo"><img src=${pins[0]["photo"]["image"]["service_url"]} alt=${posts[0]["title"]} width="200" height="200" style="object-fit: cover;min-width: 100%;min-height: 100%;"/></div>`)
-    //   .addTo(map);
+    new mapboxgl.Popup()
+      .setLngLat(e.lngLat)
+      .setHTML(e.features[0].properties.popup_html)
+      .addTo(this.map);
   }
 
   initSearch() {
@@ -178,18 +166,6 @@ export default class extends Controller {
   }
 
   locationsValueChanged(value, previousValue) {
-    // this.markersValue.forEach(marker => marker.remove())
-    // value.forEach((loc) => {
-    //   // // create a HTML element for each loc
-    //   // const el = document.createElement('div');
-    //   // el.className = 'marker';
-
-
-    //   // make a marker for each loc and add to the map
-    //   const marker = new mapboxgl.Marker().setLngLat(loc.geometry.coordinates).addTo(this.map);
-    //   this.markersValue.push(marker)
-    // })
-
     if (this.map) {
       const data = {
         "type": "FeatureCollection",

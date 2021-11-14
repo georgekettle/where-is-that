@@ -6,3 +6,16 @@
 .mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
     @apply font-sans;
 }
+
+// POPUP
+.mapboxgl-popup-content {
+    @apply p-1 rounded-md;
+}
+
+.mapboxgl-popup-tip {
+    border: 6px solid transparent;
+}
+
+.mapboxgl-popup-close-button {
+    @apply hidden;
+}
