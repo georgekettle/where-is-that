@@ -39,6 +39,8 @@ puts "Finished creating users"
 
 boards = [
 	{ name: 'Sydney', coordinates: [ -33.847927, 150.651791 ] },
+	{ name: 'Sydney Opera House, Sydney', coordinates: [ -33.847927, 150.651791 ] },
+	{ name: 'Luna Park, Sydney', coordinates: [ -33.847927, 150.651791 ] },
 	{ name: 'Melbourne', coordinates: [ -37.9712371,144.4927112 ] },
 	{ name: 'Perth', coordinates: [ -32.0397559,115.6813512 ] },
 	{ name: 'Esperance, WA', coordinates: [ -33.851725,121.8633359 ] },

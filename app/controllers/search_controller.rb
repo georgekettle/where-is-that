@@ -1,5 +1,8 @@
 class SearchController < ApplicationController
   def search
+    if params["location_id"]
+       @location = Location.find(params["location_id"])
+    end
   end
 
   def location_search
