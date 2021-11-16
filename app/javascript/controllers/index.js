@@ -9,5 +9,8 @@ application.register("map", MapController)
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)
 
+import SidebarController from "./sidebar_controller"
+application.register("sidebar", SidebarController)
+
 import TabsController from "./tabs_controller"
 application.register("tabs", TabsController)

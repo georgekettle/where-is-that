@@ -1,7 +1,7 @@
 // Remove what you don't need below to save on file size if you're not using Purge CSS
 
 .btn {
-  @apply font-medium text-base rounded cursor-pointer border border-transparent appearance-none inline-block select-none leading-normal antialiased align-baseline;
+  @apply font-medium text-base rounded cursor-pointer border border-transparent appearance-none select-none leading-normal antialiased align-baseline;
 
   padding: 0.3rem 0.75rem;
   transition: 0.15s ease;
@@ -132,6 +132,14 @@
   svg {
     @apply h-5 w-5 stroke-2 stroke-current pointer-events-none;
   }
+
+  &.icon-btn-lg {
+    @apply w-10 h-10;
+
+    svg {
+      @apply h-5 w-5;
+    }
+  }
 }
 
 .icon-btn.faded-highlight {
@@ -151,17 +159,17 @@
 }
 
 .icon-btn.white {
-  @apply bg-white bg-opacity-20;
+  @apply bg-white;
 
   svg {
-    @apply text-white;
+    @apply text-gray-800;
   }
 
   &:hover {
-    @apply bg-white bg-opacity-90;
+    @apply bg-white;
 
     svg {
-      @apply text-gray-800;
+      @apply text-gray-900;
     }
   }
 }
