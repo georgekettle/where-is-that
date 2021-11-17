@@ -28,6 +28,8 @@
     <div data-controller="map"
             data-map-mapbox-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
             data-map-search-value="<%= location_search_url(:format => :json) %>"
+            data-map-locations-value="<%= @json_locations %>"
+            data-map-update-on-move-value="false"
             class="relative h-full">
       <div data-map-target="container"
             class="w-full h-full bg-gray-100"></div>
