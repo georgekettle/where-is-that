@@ -3,6 +3,8 @@
   <h1 class="text-center inline">Explore</h1>
 <% end %>
 
-<div class="px-1">
-  <%= render 'pins/pins', pins: Pin.all %>
-</div>
+<%= render 'components/layouts/wide_container' do %>
+  <div class="px-1">
+    <%= render 'pins/pins', pins: Pin.all %>
+  </div>
+<% end %>

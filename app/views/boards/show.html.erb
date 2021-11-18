@@ -19,9 +19,11 @@
       <%= link_to 'Hide map', '#', class:'btn btn-md btn-black btn-wide btn-sm-text', data: {sidebar_target: 'hide', action: 'click->sidebar#hide'} %>
     <% end %>
 
-    <div class="px-1">
-      <%= render 'pins/pins', pins: @board.pins %>
-    </div>
+    <%= render 'components/layouts/wide_container' do %>
+      <div class="px-1">
+        <%= render 'pins/pins', pins: @board.pins %>
+      </div>
+    <% end %>
   </div>
   <!-- sidebar -->
   <div class="h-full w-0 flex-shrink-0 overflow-hidden" data-sidebar-target="sidebar">

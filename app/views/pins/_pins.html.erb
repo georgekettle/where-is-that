@@ -1,6 +1,8 @@
 <div class="masonry-container">
   <div class="masonry-sizer"></div>
   <% pins.each do |pin| %>
-    <%= render "pins/pin", pin: pin %>
+    <div class="masonry-item">
+      <%= render "pins/pin", pin: pin %>
+    </div>
   <% end %>
 </div>

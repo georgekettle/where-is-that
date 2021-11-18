@@ -12,13 +12,21 @@
       <!-- Modal Card -->
       <div class="m-1 rounded shadow">
         <div class="rounded overflow-hidden mb-2">
-      		<h4 class="w-full p-2 bg-white border-b border-gray-200 text-center text-xs text-gray-400">Save to board</h4>
+      		<h4 class="w-full p-2 bg-white border-b border-gray-200 text-center font-medium">Save to board</h4>
           <div class="max-h-96 w-full overflow-scroll">
           	<div class="bg-white p-2 pb-1">
           		<h4 class="text-xs text-primary-500">Your boards</h4>
           	</div>
 	          <% current_user.boards.each do |board| %>
-	            <%= link_to board_pin_saves_path(board, pin), method: :post, class: "w-full p-2 bg-white hover:bg-gray-100 border-b border-gray-200 block flex items-center" do %>
+	            <%= link_to board_pin_saves_path(board, pin),
+                      method: :post,
+                      data: {
+                        controller: 'save',
+                        action: 'click->save#save',
+                        save_id_value: pin.id,
+                        save_url_value: board_pin_saves_path(board, pin, format: :json),
+                      },
+                      class: "w-full p-2 bg-white hover:bg-gray-100 border-b border-gray-200 block flex items-center" do %>
 	            	<div class="rounded h-10 w-10 overflow-hidden mr-2 bg-gray-200 border border-white">
 	            		<%= cl_image_tag board.pins.first.photos.first.key, height: 100, width: 100, crop: :fill, class: 'object-cover h-10 w-10' %>
 	            	</div>
