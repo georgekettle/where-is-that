@@ -1,3 +1,8 @@
 <div class="masonry-item">
-  <%= cl_image_tag pin.photos.first.key, class: 'rounded' %>
+  <div class="relative group">
+    <%= cl_image_tag pin.photos.first.key, class: 'rounded' %>
+    <div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <%= render 'components/modals/save_pin_modal', pin: pin %>
+    </div>
+  </div>
 </div>
