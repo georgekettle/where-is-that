@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   get 'search', to: 'search#search', as: :search
   post 'location_search', to: 'search#location_search', as: :location_search
-  resources :boards, only: :show
+  resources :boards, only: :show do
+    resources :pins, only: [] do
+      resources :saves, only: [:create]
+    end
+  end
   resources :profiles, only: :show
   resources :locations, only: :show do
     member do

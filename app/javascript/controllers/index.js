@@ -9,6 +9,12 @@ application.register("map", MapController)
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)
 
+import PinController from "./pin_controller"
+application.register("pin", PinController)
+
+import SaveController from "./save_controller"
+application.register("save", SaveController)
+
 import SidebarController from "./sidebar_controller"
 application.register("sidebar", SidebarController)
 

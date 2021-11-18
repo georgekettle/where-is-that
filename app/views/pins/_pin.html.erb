@@ -1,3 +1,18 @@
-<div class="masonry-item">
-  <%= cl_image_tag pin.photos.first.key, class: 'rounded' %>
-</div>
+<% save ||= nil %>
+
+<%= turbo_frame_tag dom_id(pin) do %>
+  <div class="relative group" data-controller="pin" data-pin-id-value="<%= pin.id %>">
+    <%= cl_image_tag pin.photos.first.key, class: 'rounded' %>
+    <% if save %>
+      <div class="absolute bottom-0 left-0 w-full rounded-b bg-gradient-to-t from-black to-transparent bg-opacity-50 pt-4">
+        <%= link_to board_path(save.board), data: { turbo_frame:"_top" }, class: 'p-4 flex items-center justify-between w-full text-white group' do %>
+          <h4 class="text-sm leading-tight">Saved to<br><span class="font-semibold"><%= save.board.name %></span></h4>
+          <%= render 'icons/arrow_left', classes: 'stroke-current text-white h-5 w-5 transform rotate-180 group-hover:scale-110' %>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <%= render 'components/modals/save_pin_modal', pin: pin %>
+    </div>
+  </div>
+<% end %>

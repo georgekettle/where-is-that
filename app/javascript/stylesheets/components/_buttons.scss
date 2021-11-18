@@ -53,7 +53,7 @@
 
   &:hover,
   &:focus {
-    @apply bg-gray-200 text-gray-800;
+    @apply text-gray-900;
   }
 
   &.btn-outline {
@@ -61,7 +61,7 @@
 
     &:hover,
     &:focus {
-      @apply bg-white border border-white text-gray-800;
+      @apply bg-white border border-white text-gray-900;
     }
   }
 }
