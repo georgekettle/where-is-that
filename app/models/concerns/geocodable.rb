@@ -4,6 +4,8 @@ module Geocodable
   included do
     geocoded_by :address  do |obj,results|
 		  if geo = results.first
+		  	obj.mapbox_id = geo.data['id']
+		  	obj.mapbox_data = geo.data
 		  	obj.name = geo.place_name
 		  	obj.address = geo.address
 		    obj.latitude = geo.latitude
@@ -13,12 +15,7 @@ module Geocodable
 		    obj.state_code = geo.state_code
 		    obj.country = geo.country
 		    obj.country_code = geo.country_code
-		    if geo.data && geo.data["context"] && geo.data["context"][1] && geo.data["context"][1]["text"]
-		  		locality = geo.data["context"][1]["text"]
-		    	obj.city = geo.city || locality
-		  	else
-		  		obj.city = geo.city
-		  	end
+		    obj.city = geo.city
 		  end
 		end
 		

@@ -10,6 +10,7 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
     "@tailwindcss/line-clamp": "^0.2.2",
+    "@turf/turf": "^6.5.0",
     "imagesloaded": "^4.1.4",
     "mapbox-gl": "^2.6.0",
     "masonry-layout": "^4.2.2",

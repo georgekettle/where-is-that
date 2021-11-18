@@ -2,7 +2,7 @@
 <%= turbo_frame_tag dom_id_for_records(@location, prefix:"popup"), target: "_top" do %>
   <%= link_to location_path(@location), class:'relative' do %>
     <div class="aspect-h-6 aspect-w-9 w-56">
-      <div class="grid grid-cols-3 grid-rows-2 gap-0.5 rounded-md overflow-hidden">
+      <div class="grid grid-cols-3 grid-rows-2 gap-0.5 rounded overflow-hidden">
         <!-- ... -->
         <div class="row-span-2 col-span-2 bg-gray-100">
           <%= cl_image_tag(@location.pins.first.photos.first.key, class: 'object-cover h-full w-full') if number_of_pins >= 1 %>
@@ -21,7 +21,7 @@
     </p>
     <div class="w-56 py-1.5 text-center">
       <h4 class="font-semibold line-clamp-1 text-sm leading-tight mb-0.5"><%= @location.name %></h4>
-      <h6 class="text-gray-400 text-xs line-clamp-1"><%= @location.city %>, <%= @location.state_code %>, <%= @location.country %></h6>
+      <h6 class="text-gray-400 text-xs line-clamp-1"><%= @location.address_region %></h6>
     </div>
   <% end %>
 <% end %>

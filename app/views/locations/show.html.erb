@@ -1,4 +1,13 @@
-<div>
-  <h1 class="text-xl font-bold">Locations#show</h1>
-  <p>Find me in app/views/locations/show.html.erb</p>
-<div>
+<%= render 'components/headers/header' %>
+<%= render 'components/layouts/container', classes: 'flex items-center flex-col px-2 pb-8' do %>
+  <div class="flex items-center flex-col mb-4">
+    <h1 class="text-center"><%= @location.name %></h1>
+
+    <p class="text-gray-400 text-sm mb-4"><%= @location.address_region %></p>
+    <%= link_to 'See map', search_path(location_id: @location.id), class:'btn btn-md btn-black btn-wide btn-sm-text' %>
+  </div>
+<% end %>
+
+<div class="px-1">
+  <%= render 'pins/pins', pins: @location.pins %>
+</div>

@@ -1,7 +1,17 @@
-<div data-controller="map"
-      data-map-mapbox-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-      data-map-search-value="<%= location_search_url(:format => :json) %>"
-      class="w-screen h-screen pb-14 relative">
+<% if @location %>
+  <div data-controller="map"
+        data-map-mapbox-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        data-map-location-value="<%= @location.to_json %>"
+        data-map-search-value="<%= location_search_url(:format => :json) %>"
+        data-map-has-search-value="true"
+        class="w-screen h-screen pb-14 relative">
+<% else %>
+  <div data-controller="map"
+        data-map-mapbox-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        data-map-search-value="<%= location_search_url(:format => :json) %>"
+        data-map-has-search-value="true"
+        class="w-screen h-screen pb-14 relative">
+<% end %>
   <div data-map-target="container"
         class="w-full h-full bg-gray-100"></div>
   <div data-map-target="search"
