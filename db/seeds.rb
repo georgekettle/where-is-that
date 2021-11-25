@@ -20,7 +20,7 @@ user_photos = [
 
 puts "Creating George"
 george = User.create(name: "George Kettle", email: "george@gmail.com", password: 'secret', username: 'george')
-file = URI.open("https://instagram.fsyd3-1.fna.fbcdn.net/v/t51.2885-19/s320x320/52134512_400157867412638_7759771014875054080_n.jpg?_nc_ht=instagram.fsyd3-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=feoV2_A8iasAX9Uoxgn&tn=OXBr27oarIh1JnAb&edm=ABfd0MgBAAAA&ccb=7-4&oh=31982ff439cb41b02847586c3725ffcd&oe=6194037F&_nc_sid=7bff83")
+file = URI.open(user_photos.first)
 george.photo.attach(io: file, filename: "#{george.name}.jpeg", content_type: 'image/jpeg')
 george.save
 puts "Finished creating George"
